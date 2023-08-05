@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def awsCredentials = credentials('your-aws-credentials-id')  // Replace with your actual credentials ID
+                    def awsCredentials = credentials('eks-credentials') 
 
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: awsCredentials.id]]) {
                         sh '''
